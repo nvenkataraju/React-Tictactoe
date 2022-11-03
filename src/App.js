@@ -28,7 +28,7 @@ const App = () => {
     // Step 1: Update the board
     const updatedBoard = board.map((value, idx) => {
       if (idx === boxIdx) {
-        return xPlaying ? "X" : "O";
+        return xPlaying ? "A" : "B";
       } else {
         return value;
       }
@@ -40,13 +40,15 @@ const App = () => {
     const winner = checkWinner(updatedBoard);
 
     if (winner) {
-      if (winner === "O") {
+      if (winner === "B") {
         let { oScore } = scores;
         oScore += 1;
+        alert("B is the Winner..")
         setScores({ ...scores, oScore })
       } else {
         let { xScore } = scores;
         xScore += 1;
+        alert("A is the Winner")
         setScores({ ...scores, xScore })
       }
     }

@@ -3,7 +3,7 @@ import React from 'react';
 import "./Box.css";
 
 export const Box = ({ value, onClick }) => {
-    const style = value === "X" ? "box x" : "box o";
+    const style = value === "A" ? "box A" : "box B";
 
     return (
         <button className={style} onClick={onClick}>{value}</button>
